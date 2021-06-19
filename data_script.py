@@ -21,15 +21,9 @@ def check_file(root: TextIO, file: str, stat_dict: Dict, hard_stat: Dict, counte
                     counter += 1
                     stat_dict['sentence_count'] += 1
 
-                    if result_token_word[ind][-1] == ".":
-                        stat_dict['end_sent_count']['.'] += 1
-                    elif result_token_word[ind][-1] == "?":
-                        stat_dict['end_sent_count']['?'] += 1
-                        stat_dict['end_sent']['?'].append(counter)
-                    else:
-                        if result_token_word[ind][-1] in stat_dict['end_sent_count']:
-                            stat_dict['end_sent_count'][result_token_word[ind][-1]] += 1
-                            hard_stat['ind_sent'][result_token_word[ind][-1]].append(counter)
+                    if result_token_word[ind][-1] in stat_dict['end_sent_count']:
+                        stat_dict['end_sent_count'][result_token_word[ind][-1]] += 1
+                        hard_stat['ind_sent'][result_token_word[ind][-1]].append(counter)
 
         text_in_file.close()
 
