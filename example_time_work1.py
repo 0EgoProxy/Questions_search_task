@@ -18,7 +18,7 @@ if __name__ == '__main__':
     doc_num = 0
     for doc in work_path.rglob("**/*.txt"):
         doc_num += 1
-    # ------------------------------------------------------------------------------------------
+
     with open("file_data_root.txt", 'a') as root_file:
         for file_txt in tqdm(work_path.rglob("**/*.txt"), total=doc_num):
 
