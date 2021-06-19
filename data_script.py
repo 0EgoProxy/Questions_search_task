@@ -47,9 +47,9 @@ if __name__ == '__main__':
     all_nplus_path = data_root.joinpath('NPlus1')
 
     # todo: write comment
-    all_paths = [doc for doc in all_news_path.rglob("*/texts/*.txt")]
-    all_paths.extend([doc for doc in all_social_path.rglob("**/texts/*.txt")])
-    all_paths.extend([doc for doc in all_nplus_path.rglob("**/texts/*.txt")])
+    all_paths = [doc for doc in all_news_path.rglob("**/*.txt")]
+    all_paths.extend([doc for doc in all_social_path.rglob("**/*.txt")])
+    all_paths.extend([doc for doc in all_nplus_path.rglob("**/*.txt")])
     doc_num = len(all_paths)
 
     # start parsing all files
@@ -73,7 +73,7 @@ if __name__ == '__main__':
                                                                                  hard_stat=ind_hard_stats,
                                                                                  counter=global_sent_ind)
             else:
-                root_file = open("root_dataset.txt", 'a', encoding='utf-8')
+                root_file = root_path.joinpath('root_dataset.txt').open('a', encoding='utf-8')
                 flow_open = True
                 dataset_statistics, ind_hard_stats, global_sent_ind = check_file(root=root_file,
                                                                                  file=file_txt,
