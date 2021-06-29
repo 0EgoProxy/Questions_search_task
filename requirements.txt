@@ -1,2 +1,5 @@
 tqdm
 nltk
+pandas
+matplotlib
+sklearn

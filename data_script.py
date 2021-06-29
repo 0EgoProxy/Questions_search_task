@@ -6,6 +6,12 @@ from nltk import sent_tokenize, word_tokenize
 from tqdm import tqdm
 
 
+""" Формирование датасета из большого числа разных файлов.
+    Датасет с шаблоном:
+                "Предложение'\t'знак на которое предложение оканчивается". В одной строке одно предложение.
+"""
+
+
 def check_file(root: TextIO, file: str, stat_dict: Dict, hard_stat: Dict, counter: int) -> Tuple[Dict, Dict, int]:
     with open(file, 'r', encoding='utf-8') as text_in_file:
         for line in text_in_file:
@@ -84,5 +90,13 @@ if __name__ == '__main__':
     with open('dataset_stats.json', 'w', encoding='utf-8') as statfile:
         json.dump(dataset_statistics, statfile)
 
-    with open('ind_hard_stats', 'w', encoding='utf-8') as hard_stat_file:
+    with open('ind_hard_stats.json', 'w', encoding='utf-8') as hard_stat_file:
         json.dump(ind_hard_stats, hard_stat_file)
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+""" 
+Создание 'рабочего датасета' - предобработка 'data_set file'
+"""
+
+
