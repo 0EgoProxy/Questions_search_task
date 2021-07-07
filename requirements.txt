@@ -1,2 +1,8 @@
-tqdm
-nltk
+tqdm~=4.61.1
+nltk~=3.6.2
+pandas~=1.2.4
+matplotlib
+sklearn~=0.0
+xgboost~=1.4.2
+numpy~=1.20.3
+scikit-learn~=0.24.2
