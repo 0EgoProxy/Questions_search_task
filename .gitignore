@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # my data
-dataset_of_questions/
+dataset/
+checkpoints/
